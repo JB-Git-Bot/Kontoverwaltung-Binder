@@ -34,6 +34,10 @@ abstract class Basic {
     // Abheben
     public abstract void abheben(double betrag);
 
+    public String getKontoart() {
+        return this.kontoart;
+    }
+
     // Kontoauszug
     public void kontoauszug() {
         System.out.println("Kontoauszug für " + kontoinhaber);
