@@ -7,6 +7,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<Basic> kontenListe = new ArrayList<>();
 
+        System.out.println("Möchten Sie die GUI oder die Konsole nutzen?");
+        System.out.println("1. GUI starten");
+        System.out.println("2. Konsolenanwendung starten");
+        int auswahl = scanner.nextInt();
+
+        if (auswahl == 1) {
+            javax.swing.SwingUtilities.invokeLater(() -> new KontoGUI());
+        } else {
+            startKonsolenAnwendung(scanner, kontenListe);
+        }
+    }
+
+    private static void startKonsolenAnwendung(Scanner scanner, List<Basic> kontenListe) {
         while (true) {
             System.out.println("\n=============================");
             System.out.println("    Bank System Menü");
