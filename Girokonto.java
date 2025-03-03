@@ -1,17 +1,24 @@
-class Girokonto extends Basic {
-
-    public Girokonto(String kontoinhaber, double kontostand, double kontofuehrungsgebuehren, double ueberziehungsrahmen) {
-        // Der Konstruktor der Basisklasse wird aufgerufen
-        super(kontoinhaber, kontostand, kontofuehrungsgebuehren, "Girokonto", ueberziehungsrahmen);
+public class Girokonto extends Basic {
+    public Girokonto(int Kontonummer, String Kontoinhaber, int Bankleitzahl, double Kontofuehrungsgebuehren, double Kontostand, double Ueberziehungsrahmen) {
+        super(Kontonummer, "Girokonto", Kontoinhaber, Bankleitzahl, Kontofuehrungsgebuehren, Kontostand, Ueberziehungsrahmen);
     }
 
-    @Override
-    public void abheben(double betrag) {
-        if (kontostand - betrag >= -ueberziehungsrahmen) {
-            kontostand -= betrag;
-            System.out.println("Es wurden " + betrag + "€ abgehoben.");
-        } else {
-            System.out.println("Abhebung nicht möglich. Überziehungsrahmen überschritten.");
+    public boolean einzahlen(double amount) {
+        if (amount < 0) {
+            System.out.println("Einzahlung muss positiv sein.");
+            return false;
         }
+        this.Kontostand += amount;
+        return true;
+    }
+
+    public boolean abheben(double amount) {
+        double nk = Kontostand - amount;
+        if (nk < -Ueberziehungsrahmen) {
+            System.out.printf("Abhebung nicht möglich! Kontostand: %.2f, Versuchter neuer Kontostand: %.2f (Überziehungsrahmen: %.2f)%n", Kontostand, nk, Ueberziehungsrahmen);
+            return false;
+        }
+        Kontostand = nk;
+        return true;
     }
 }

@@ -1,53 +1,37 @@
-abstract class Basic {
-    protected String kontoinhaber;
-    protected String bankleitzahl;
-    protected String kontonummer;
-    protected double kontostand;
-    protected double kontofuehrungsgebuehren;
-    protected String kontoart;
-    protected double ueberziehungsrahmen;
+public class Basic {
+    String Kontoinhaber;
+    String Kontoart;
 
-    // Statische Zählervariable für Kontonummer
-    private static int kontoNummerZaehler = 1000;
+    int Bankleitzahl;
+    int Kontonummer;
+    double Ueberziehungsrahmen;
+    double Kontofuehrungsgebuehren;
+    double Kontostand;
 
-    // Konstruktor
-    public Basic(String kontoinhaber, double kontostand, double kontofuehrungsgebuehren, String kontoart, double ueberziehungsrahmen) {
-        this.kontoinhaber = kontoinhaber;
-        this.bankleitzahl = "12345678";  // Feste Bankleitzahl
-        this.kontonummer = String.valueOf(kontoNummerZaehler++);  // Kontonummer wird automatisch vergeben
-        this.kontostand = kontostand;
-        this.kontofuehrungsgebuehren = kontofuehrungsgebuehren;
-        this.kontoart = kontoart;
-        this.ueberziehungsrahmen = ueberziehungsrahmen;
+    static final int DEFAULT_BLZ = 12345;
+    static final double DEFAULT_KONTOFUEHRUNGSGEBUEHREN = 5.0;
+    static final double DEFAULT_KONTOSTAND = 0.0;
+
+    public Basic(int Kontonummer, String Kontoart, String Kontoinhaber, int Bankleitzahl,
+                 double Kontofuehrungsgebuehren, double Kontostand, double Ueberziehungsrahmen) {
+        this.Kontoinhaber = Kontoinhaber;
+        this.Bankleitzahl = Bankleitzahl;
+        this.Kontonummer = Kontonummer;
+        this.Kontofuehrungsgebuehren = Kontofuehrungsgebuehren;
+        this.Kontostand = Kontostand;
+        this.Kontoart = Kontoart;
+        this.Ueberziehungsrahmen = Ueberziehungsrahmen;
     }
 
-    // Einzahlen
-    public void einzahlen(double betrag) {
-        if (betrag > 0) {
-            kontostand += betrag;
-            System.out.println("Es wurden " + betrag + "€ eingezahlt.");
-        } else {
-            System.out.println("Einzahlungsbetrag muss positiv sein.");
-        }
-    }
-
-    // Abheben
-    public abstract void abheben(double betrag);
-
-    public String getKontoart() {
-        return this.kontoart;
-    }
-
-    // Kontoauszug
     public void kontoauszug() {
-        System.out.println("Kontoauszug für " + kontoinhaber);
-        System.out.println("Kontonummer: " + kontonummer);
-        System.out.println("Bankleitzahl: " + bankleitzahl);
-        System.out.println("Kontostand: " + kontostand + "€");
-    }
-
-    // Getter für Kontostand
-    public double getKontostand() {
-        return kontostand;
+        System.out.println("===== Kontoauszug =====");
+        System.out.println("Kontoinhaber: " + Kontoinhaber);
+        System.out.println("Kontoart: " + Kontoart);
+        System.out.println("Kontonummer: " + Kontonummer);
+        System.out.println("Bankleitzahl: " + Bankleitzahl);
+        System.out.printf("Kontostand: %.2f%n", Kontostand);
+        System.out.printf("Überziehungsrahmen: %.2f%n", Ueberziehungsrahmen);
+        System.out.printf("Kontoführungsgebühren: %.2f%n", Kontofuehrungsgebuehren);
+        System.out.println("=======================");
     }
 }
