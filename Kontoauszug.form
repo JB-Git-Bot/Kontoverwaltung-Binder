@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="KontoErstellung">
-  <grid id="27dc6" binding="kontoErstellungPanel" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Kontoauszug">
+  <grid id="27dc6" binding="kontoauszugPanel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -8,15 +8,15 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="4ff78" class="javax.swing.JLabel" binding="kontoErstellunguebersichtLabel">
+      <component id="7baa4" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="KontoErstellung - Übersicht - Binder"/>
+          <text value="Kontoauszug - Übersicht - Binder"/>
         </properties>
       </component>
-      <component id="cdc3d" class="javax.swing.JLabel">
+      <component id="a7876" class="javax.swing.JLabel" binding="kontoinhaberLabel">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -24,15 +24,17 @@
           <text value="Kontoinhaber:"/>
         </properties>
       </component>
-      <component id="f0c8e" class="javax.swing.JTextField" binding="kontoinhaberTextField">
+      <component id="6f3da" class="javax.swing.JTextField" binding="kontoinhaberTextField">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
-      <component id="1d2e0" class="javax.swing.JLabel" binding="kontonummerLabel">
+      <component id="2fe24" class="javax.swing.JLabel" binding="kontonummerLabel">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -40,15 +42,17 @@
           <text value="Kontonummer:"/>
         </properties>
       </component>
-      <component id="f58a3" class="javax.swing.JTextField" binding="kontonummerTextField">
+      <component id="102d7" class="javax.swing.JTextField" binding="kontonummerTextField">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
-      <component id="dcb06" class="javax.swing.JLabel" binding="kontotandLabel">
+      <component id="3f251" class="javax.swing.JLabel" binding="kontostandLabel">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -56,15 +60,17 @@
           <text value="Kontostand:"/>
         </properties>
       </component>
-      <component id="b40a9" class="javax.swing.JTextField" binding="kontostandTextField">
+      <component id="e974c" class="javax.swing.JTextField" binding="kontostandTextField">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
-      <component id="3997b" class="javax.swing.JLabel" binding="gebuehrenLabel">
+      <component id="f190f" class="javax.swing.JLabel" binding="gebuehrenLabel">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -72,40 +78,32 @@
           <text value="Gebühren:"/>
         </properties>
       </component>
-      <component id="aec31" class="javax.swing.JTextField" binding="gebuehrenTextField">
+      <component id="6eded" class="javax.swing.JTextField" binding="gebuehrenTextField">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
-      </component>
-      <component id="833d4" class="javax.swing.JButton" binding="erstellenButton" default-binding="true">
-        <constraints>
-          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
         <properties>
-          <text value="Erstellen"/>
+          <editable value="false"/>
         </properties>
       </component>
-      <component id="d50e2" class="javax.swing.JComboBox" binding="kontoartComboBox">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="Sparkonto"/>
-            <item value="Kreditkonto"/>
-            <item value="Girokonto"/>
-          </model>
-        </properties>
-      </component>
-      <component id="1ad02" class="javax.swing.JLabel" binding="kontoartLabel">
+      <component id="2d3e" class="javax.swing.JLabel" binding="kontoartLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Kontoart:"/>
+        </properties>
+      </component>
+      <component id="94260" class="javax.swing.JTextField" binding="kontoartTextField">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
         </properties>
       </component>
     </children>

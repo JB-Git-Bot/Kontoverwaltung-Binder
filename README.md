@@ -1,2 +1,4 @@
-# 2. Aufgabenstellung - Kontoverwaltung
-10.02.2025 - Binder Jonas
+# Kontoverwaltung
+2. Aufgabenstellung - Kontoverwaltung
+4. Aufgabenstellung - GUI für Kontoverwaltung  
+Binder Jonas
